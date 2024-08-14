@@ -7,9 +7,12 @@
 
 import Foundation
 import UIKit
-
+import FirebaseCore
+import FirebaseMessaging
 
 extension NotificationsService: UIApplicationDelegate {
+
+    
     // 6.
   /// 앱이 종료되었을 때에 노티를 탭한 경우 여기서 수신
   func application(_ application: UIApplication,
@@ -27,5 +30,30 @@ extension NotificationsService: UIApplicationDelegate {
           return
       }
       print("🏝️\(accessToken)🏝️" )
+      // MARK: ------
+      // MARK: ➡️ FCM 추가시
+      Messaging.messaging().setAPNSToken(deviceToken, type: .sandbox)
+      // MARK: ⬅️ ------
   }
 }
+// MARK: ------
+// MARK: ➡️ FCM 추가시
+extension NotificationsService :  MessagingDelegate {
+    
+    // 4.
+     func setDelegate() {
+       Messaging.messaging().delegate = self
+     }
+
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        
+        print("앱이 FCM에 성공적으로 등록" )
+        print("🌻\(fcmToken ?? "-")🌻" )
+        
+        
+        
+    }
+}
+
+// MARK: ⬅️ ------
+

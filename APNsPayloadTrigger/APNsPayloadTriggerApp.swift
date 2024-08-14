@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseMessaging
+
 
 @main
 struct APNsPayloadTriggerApp: App {
@@ -17,8 +20,11 @@ struct APNsPayloadTriggerApp: App {
 
     init() {
         
-      UIApplication.shared.delegate = NotificationsService.shared
-      notificationService.requestPushPermission()
+        UIApplication.shared.delegate = NotificationsService.shared
+        FirebaseApp.configure()
+       
+        notificationService.setDelegate()
+        notificationService.requestPushPermission()
     }
     
     var body: some Scene {

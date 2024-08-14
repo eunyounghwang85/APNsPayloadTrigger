@@ -12,6 +12,7 @@ import UIKit
 // UNUserNotificationCenterDelegate의 메소드 구현
 class NotificationsService: NSObject, UNUserNotificationCenterDelegate {
   static let shared = NotificationsService()
+    
 
     // 1.
   func requestPushPermission() {
