@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import FirebaseCore
 import FirebaseMessaging
 
 extension NotificationsService: UIApplicationDelegate {

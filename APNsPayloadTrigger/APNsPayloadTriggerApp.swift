@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 import FirebaseCore
 import FirebaseMessaging
 
@@ -21,9 +22,13 @@ struct APNsPayloadTriggerApp: App {
     init() {
         
         UIApplication.shared.delegate = NotificationsService.shared
+        // MARK: ------
+        // MARK: ➡️ FCM 추가시
+        //import FirebaseCore
         FirebaseApp.configure()
-       
+        //import FirebaseMessaging
         notificationService.setDelegate()
+        // MARK: ⬅️ ------
         notificationService.requestPushPermission()
     }
     

@@ -45,7 +45,7 @@ class NotificationsService: NSObject, UNUserNotificationCenterDelegate {
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
     let userInfo = response.notification.request.content.userInfo
       if let jsondata = try? JSONSerialization.data(withJSONObject: userInfo, options: []) {
-          print("🤯\(String(data: jsondata, encoding: .utf8))🤯")
+          print("🤯\(String(describing: String(data: jsondata, encoding: .utf8)))🤯")
       }
 
     print(userInfo)
