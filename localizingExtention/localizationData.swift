@@ -37,6 +37,11 @@ extension localizationData {
 //MARK: 🌻custom UNMutableNotificationContent
 let dataKey = "data"
 //let localizationDataKey = "localization_data"
+extension String {
+    func localized() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+}
 
 final class injectionUNNotificationContent {
 
@@ -44,56 +49,77 @@ final class injectionUNNotificationContent {
     
     init?(apnsPayload: [AnyHashable : Any]) {
         
-       /* if let jsondata = try? JSONSerialization.data(withJSONObject: apnsPayload, options: .prettyPrinted) {
+        /*if let jsondata = try? JSONSerialization.data(withJSONObject: apnsPayload, options: .prettyPrinted) {
             print("🌝\(String(describing: String(data: jsondata, encoding: .utf8)))🌝")
         }*/
         
        // print("🌝\(String(describing: apnsPayload))🌝")
-        var newar = [localizationData]()
-       
-        var title = ""
-        var body = ""
-        _ = apnsPayload.map({
-            guard let st = $0.key as? String, let v = $0.value as? String,
-            ["-title", "-body"].contains(where: {
-                st.contains($0)
-            }) else {
-                return
-            }
+    
+        if let alert = (apnsPayload["aps"] as? [AnyHashable : Any])?["alert"]  as? [AnyHashable : Any],
+           let title = alert["loc-key"] as? String,
            
             
-            var le = st.replacingOccurrences(of: "-title", with: "")
-            le = st.replacingOccurrences(of: "-body", with: "")
-            
-            if st.contains("-title") {
-                title = v
-               
-            }else{
-                body = v
-            }
-            
-            if let fir = newar.first(where: {$0.language == le}){
-                newar.removeAll(where: {$0.language == le})
-                title = title.isEmpty ? fir.title : title
-                body = body.isEmpty ? fir.body : body
+           let valus = alert["loc-args"] as? [String] {
+            print("🌝\(title)🌝")
+            print("🐣\(valus)🐣")
+            self.localContents = ["ko","en"].map({
+                let localizeValus = valus.map({
+                    $0.localized()
+                })
+                let localizebody = String(format: title.localized(), localizeValus.first!, localizeValus.last!)
                 
-            }
+                return localizationData($0,  $0 == "ko" ? "한글푸쉬테스트" : "English push text ", localizebody)
+            })
             
-            newar.append(localizationData.init(le, title, body))
-            title = ""
-            body = ""
-          
-        })
-        guard !newar.isEmpty  else {
-            return nil
+        }else{
+         
+            var newar = [localizationData]()
+           
+            var title = ""
+            var body = ""
+            _ = apnsPayload.map({
+                guard let st = $0.key as? String, let v = $0.value as? String,
+                ["-title", "-body"].contains(where: {
+                    st.contains($0)
+                }) else {
+                    return
+                }
+               
+                
+                var le = st.replacingOccurrences(of: "-title", with: "")
+                le = st.replacingOccurrences(of: "-body", with: "")
+                
+                if st.contains("-title") {
+                    title = v
+                   
+                }else{
+                    body = v
+                }
+                
+                if let fir = newar.first(where: {$0.language == le}){
+                    newar.removeAll(where: {$0.language == le})
+                    title = title.isEmpty ? fir.title : title
+                    body = body.isEmpty ? fir.body : body
+                    
+                }
+                
+                newar.append(localizationData.init(le, title, body))
+                title = ""
+                body = ""
+              
+            })
+            guard !newar.isEmpty  else {
+                return nil
+            }
+            /*
+            guard let data = apnsPayload[dataKey] as? [[String:Any]],
+                  let jsondata = try? JSONSerialization.data(withJSONObject: data, options: []),
+                  let lContentList  =  try? JSONDecoder().decode([localizationData].self, from: jsondata) else {
+                return nil
+            }*/
+            self.localContents = newar
+            
         }
-        /*
-        guard let data = apnsPayload[dataKey] as? [[String:Any]],
-              let jsondata = try? JSONSerialization.data(withJSONObject: data, options: []),
-              let lContentList  =  try? JSONDecoder().decode([localizationData].self, from: jsondata) else {
-            return nil
-        }*/
-        self.localContents = newar
     }
 }
 

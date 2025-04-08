@@ -7,8 +7,11 @@
 
 import Foundation
 import UIKit
+#if FCMUSE
 import FirebaseMessaging
+#endif
 
+@MainActor
 extension NotificationsService: UIApplicationDelegate {
 
     
@@ -29,12 +32,15 @@ extension NotificationsService: UIApplicationDelegate {
           return
       }
       print("🏝️\(accessToken)🏝️" )
+#if FCMUSE
       // MARK: ------
       // MARK: ➡️ FCM 추가시
       Messaging.messaging().setAPNSToken(deviceToken, type: .sandbox)
       // MARK: ⬅️ ------
+#endif
   }
 }
+#if FCMUSE
 // MARK: ------
 // MARK: ➡️ FCM 추가시
 extension NotificationsService :  MessagingDelegate {
@@ -53,6 +59,5 @@ extension NotificationsService :  MessagingDelegate {
         
     }
 }
-
 // MARK: ⬅️ ------
-
+#endif

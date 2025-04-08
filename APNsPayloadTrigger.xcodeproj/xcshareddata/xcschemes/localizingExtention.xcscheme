@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
+   LastUpgradeVersion = "1620"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -60,7 +60,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "0"
          BundleIdentifier = "com.hyundiht.hey.swiftui.APNsPayloadTrigger"
-         RemotePath = "/var/containers/Bundle/Application/ACC97013-5906-441B-8E12-E844CDF29DE0/APNsPayloadTrigger.app">
+         RemotePath = "/var/containers/Bundle/Application/E0EFD425-CF60-4D5D-87F8-17722667C9DA/APNsPayloadTrigger.app">
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference

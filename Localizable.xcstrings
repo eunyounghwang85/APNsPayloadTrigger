@@ -1,0 +1,55 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "GAME_PLAY_REQUEST_FORMAT" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ has invited you to play a game with them. Are you ready to play against %@?\""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@가 당신을 그들과 함께 게임하도록 초대했습니다. %@와 게임할 준비가 되셨나요?\""
+          }
+        }
+      }
+    },
+    "Hello, world!" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "안녕! HT"
+          }
+        }
+      }
+    },
+    "Rick" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "릭(한글)"
+          }
+        }
+      }
+    },
+    "Shelly" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "샐리(한글)"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

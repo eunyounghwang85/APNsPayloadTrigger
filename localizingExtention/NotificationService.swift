@@ -28,6 +28,8 @@ class NotificationService: UNNotificationServiceExtension {
                 handelr(bestAttemptContent)
             }
         }
+        
+        
         guard let localizeData = injectionUNNotificationContent(apnsPayload: bestAttemptContent.userInfo),
               let currentContent = localizeData.getContent else {
             return

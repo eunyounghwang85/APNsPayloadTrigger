@@ -13,6 +13,8 @@
 		55134EF32C659232008EF71C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55134EF22C659232008EF71C /* Preview Assets.xcassets */; };
 		551676772C6C80FD00C4FA5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 551676762C6C80FC00C4FA5B /* GoogleService-Info.plist */; };
 		5516767D2C6C83E200C4FA5B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5516767C2C6C83E200C4FA5B /* FirebaseMessaging */; };
+		55707BE12D670DA900A94A1A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 55707BE02D670DA900A94A1A /* Localizable.xcstrings */; };
+		55707BE32D6714F200A94A1A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 55707BE02D670DA900A94A1A /* Localizable.xcstrings */; };
 		55F07DA72C6605AF003C6ABE /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F07DA62C6605AF003C6ABE /* NotificationService.swift */; };
 		55F07DA92C66063A003C6ABE /* ex+Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F07DA82C66063A003C6ABE /* ex+Appdelegate.swift */; };
 		55F07DAB2C660680003C6ABE /* ex+uikit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F07DAA2C660680003C6ABE /* ex+uikit.swift */; };
@@ -53,6 +55,7 @@
 		55134EF22C659232008EF71C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55134EF92C659315008EF71C /* APNsPayloadTrigger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = APNsPayloadTrigger.entitlements; sourceTree = "<group>"; };
 		551676762C6C80FC00C4FA5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		55707BE02D670DA900A94A1A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		55F07DA62C6605AF003C6ABE /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		55F07DA82C66063A003C6ABE /* ex+Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ex+Appdelegate.swift"; sourceTree = "<group>"; };
 		55F07DAA2C660680003C6ABE /* ex+uikit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ex+uikit.swift"; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		55134EDF2C659231008EF71C = {
 			isa = PBXGroup;
 			children = (
+				55707BE02D670DA900A94A1A /* Localizable.xcstrings */,
 				55134EEA2C659231008EF71C /* APNsPayloadTrigger */,
 				55F07DC12C699AA1003C6ABE /* localizingExtention */,
 				55134EE92C659231008EF71C /* Products */,
@@ -183,7 +187,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					55134EE72C659231008EF71C = {
 						CreatedOnToolsVersion = 15.4;
@@ -200,6 +204,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 55134EDF2C659231008EF71C;
 			packageReferences = (
@@ -222,6 +227,7 @@
 			files = (
 				55134EF32C659232008EF71C /* Preview Assets.xcassets in Resources */,
 				55134EF02C659232008EF71C /* Assets.xcassets in Resources */,
+				55707BE12D670DA900A94A1A /* Localizable.xcstrings in Resources */,
 				551676772C6C80FD00C4FA5B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55707BE32D6714F200A94A1A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +334,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -383,6 +391,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -390,7 +399,6 @@
 		55134EF72C659232008EF71C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = APNsPayloadTrigger/APNsPayloadTrigger.entitlements;
@@ -399,6 +407,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"APNsPayloadTrigger/Preview Content\"";
 				DEVELOPMENT_TEAM = J9G7LUHM5U;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -412,6 +421,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyundiht.hey.swiftui.APNsPayloadTrigger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -421,7 +431,6 @@
 		55134EF82C659232008EF71C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = APNsPayloadTrigger/APNsPayloadTrigger.entitlements;
@@ -430,6 +439,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"APNsPayloadTrigger/Preview Content\"";
 				DEVELOPMENT_TEAM = J9G7LUHM5U;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "FCMUSE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -443,6 +453,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyundiht.hey.swiftui.APNsPayloadTrigger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) FCMUSE";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

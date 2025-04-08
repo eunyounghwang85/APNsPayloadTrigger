@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
-
+#if FCMUSE
 import FirebaseCore
 import FirebaseMessaging
-
+#endif
 
 @main
 struct APNsPayloadTriggerApp: App {
@@ -22,6 +22,7 @@ struct APNsPayloadTriggerApp: App {
     init() {
         
         UIApplication.shared.delegate = NotificationsService.shared
+#if FCMUSE
         // MARK: ------
         // MARK: ➡️ FCM 추가시
         //import FirebaseCore
@@ -29,6 +30,8 @@ struct APNsPayloadTriggerApp: App {
         //import FirebaseMessaging
         notificationService.setDelegate()
         // MARK: ⬅️ ------
+#endif
+        
         notificationService.requestPushPermission()
     }
     
